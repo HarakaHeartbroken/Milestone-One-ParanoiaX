@@ -6,8 +6,8 @@ function newInventory(){
     inventory.style.flexDirection = 'row'
     inventory.style.alignItems = 'center'
     inventory.style.justifyContent = 'space-evenly'
-    inventory.style.border = '2px solid black'
-    inventory.style.backgroundColor = 'brown'
+    inventory.style.border = '2px solid green'
+    inventory.style.backgroundColor = 'black'
     document.body.append(inventory)
     return inventory
 }

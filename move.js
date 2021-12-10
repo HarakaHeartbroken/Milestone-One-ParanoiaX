@@ -1,3 +1,13 @@
+
+// To-do: code in collision detection system- hitboxes off tile system? Allows for type: pickup
+// type: damaging, type: deadly, etc for interactibles, and walls
+
+// idea: derived "position" variable for each object class, which PC, NPC, Tiles, and Interactibles
+// are all subclasses of. If position matches, do X/Y/Z. Walls undo the last keystroke?
+
+
+
+
 function move(element) {
     element.style.position = 'fixed'
 
