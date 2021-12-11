@@ -1,6 +1,8 @@
 function newPlayableCharacter(x, y) {
     const element = newImage('assets/redStatic.png')
     element.style.zIndex = 1;
+    element.x = 16;
+    element.y = 16;
 
     function handleDirectionChange(direction) {
         if (direction === null) {
@@ -22,7 +24,5 @@ function newPlayableCharacter(x, y) {
 
     move(element).withArrowKeys(x, y, handleDirectionChange)
 
-    return {
-        element: element
-    }
+    
 }

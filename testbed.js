@@ -1,89 +1,129 @@
-// async function mapRender(map) {
-//         map.array.forEach(element => {
-//          console.log(element)   
-//             })
+// draw: function(){
+//     var self = this;
+//     this.context.clearRect(0, 0, this.w, this.h);
+//       this.context.fillStyle = "rgba(255,0,0,0.6)";
+//     _(this.map).each(function(row,i){
+//       _(row).each(function(tile,j){
+//         if(tile !== 0){ //if tile is not walkable
+//           self.drawTile(j,i); //draw a rectangle at j,i
 //         }
-    
-    
-//     var testmap = [
-//         [111],
-//         [101],
-//         [111]
-//     ]
-//     mapRender(testmap)
+//       });
+//     });
+//   },
+//   drawTile: function(x,y){
+//     this.context.fillRect(
+//       x * this.tileSize, y * this.tileSize,
+//       this.tileSize, this.tileSize
+//     );
+//   }
+// var a = 
 
-// 415
-// 263
-// 718
+// bool DoBoxesIntersect(a, b) {
+//     return (abs((a.x + a.width/2) - (b.x + b.width/2)) * 2 < (a.width + b.width)) &&
+//            (abs((a.y + a.height/2) - (b.y + b.height/2)) * 2 < (a.height + b.height));
+//   }
+
+
+// function checkAABBCollision(A, B)
+// {
+//   var AisToTheRightOfB = A.getLeft() > B.getRight();
+//   var AisToTheLeftOfB = A.getRight() < B.getLeft();
+//   var AisAboveB = A.getBottom() < B.getTop();
+//   var AisBelowB = A.getTop() > B.getBottom();
+//   return !(AisToTheRightOfB
+//     || AisToTheLeftOfB
+//     || AisAboveB
+//     || AisBelowB);
+// }
 
 
 var demoMap = [
-    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5],
     [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,0,0,0,4,1,1,5,0,0,0,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
-    [3,0,0,0,0,0,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
+    [3,0,0,0,0,6,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,4,1,1,8,6,6,7,1,1,5,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,2,6,6,6,6,6,6,6,6,3,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,2,6,6,6,6,6,6,6,6,3,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,7,1,1,5,6,6,4,1,1,8,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
-    [3,0,0,0,0,0,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
-    [3,0,0,0,0,0,0,0,0,0,7,1,1,8,0,0,0,0,0,0,0,0,0,2],
+    [3,0,4,5,0,0,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
+    [3,0,3,2,0,4,5,0,0,0,7,1,1,8,0,0,0,0,0,0,0,0,0,2],
+    [3,0,7,1,1,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-    [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    [7,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,8]
   ];
 
 
-
-
-
-
-
-var testmap = [
-    [1, 2, 3], 
-    [1, 0, 0], 
-    [1, 1, 1]
-];
-function test(map){
-    for(i = 0; i<map.length; i++){
-        for(j = 0; j<map[i].length; j++){
-            if(map[i][j] === 0){
-                move(newImage('assets/bgTile.png')).to(16*i, 16*j)
-            }
-            else if(map[i][j] === 1){
-                move(newImage('assets/wall1.png')).to(16*i, 16*j)
-            }
-            else if(map[i][j] === 2){
-                move(newImage('assets/wall6.png')).to(16*i, 16*j)
-            }
-            else if(map[i][j] === 3){
-                move(newImage('assets/wall6.png')).to(16*i, 16*j)
-            }
-            else if(map[i][j] === 4){
-                move(newImage('assets/wall4.png')).to(16*i, 16*j)
-            }
-            else if(map[i][j] === 5){
-                move(newImage('assets/wall5.png')).to(16*i, 16*j)
-            }
-            else if(map[i][j] === 6){
-                move(newImage('assets/intWall.png')).to(16*i, 16*j)
-            }
-            else if(map[i][j] === 7){
-                move(newImage('assets/wall7.png')).to(16*i, 16*j)
-            }
-            else if(map[i][j] === 8){
-                move(newImage('assets/wall8.png')).to(16*i, 16*j)
-            }
-            else if(map[i][j] === 9){
-                move(newImage('assets/wall9.png')).to(16*i, 16*j)
-            }
-        }
+class Tile {
+    constructor(url, x, y, height, width, type) {
+        this.x = 16*x;
+        this.y = 16*y;
+        this.height = height;
+        this.width = width;
+        this.type = type;
+        move(newImage(url)).to(this.x, this.y) 
     }
 }
-const pc = newPlayableCharacter(100, 110)
-test(demoMap)
-// expected output wall leftWall rightWall wall background wall wall wall wall
-// console.log(map[])
+
+
+
+// Appends array of object properties to the ASCII map array passed to it
+
+function mapRender(map){
+    const renderedMap = [];
+    for(i = 0; i<map.length; i++){
+        const subArray = [];
+        for(j = 0; j<map[i].length; j++){
+            if(map[i][j] === 0){
+            subArray.push(new Tile('assets/bgTile.png', i, j, 16, 16, "walkable"));
+            }
+            else if(map[i][j] === 1){
+                subArray.push(new Tile('assets/wall1.png', i, j, 16, 16, "wall"));
+            }
+            else if(map[i][j] === 2){
+                subArray.push(new Tile('assets/wall6.png', i, j, 16, 16, "wall"));
+            }
+            else if(map[i][j] === 3){
+                subArray.push(new Tile('assets/wall6.png', i, j, 16, 16, "wall"));
+            }
+            else if(map[i][j] === 4){
+                subArray.push(new Tile('assets/wall4.png', i, j, 16, 16, "wall"));
+            }
+            else if(map[i][j] === 5){
+                subArray.push(new Tile('assets/wall5.png', i, j, 16, 16, "wall"));
+            }
+            else if(map[i][j] === 6){
+                subArray.push(new Tile('assets/intWall.png', i, j, 16, 16, "wall"));
+            }
+            else if(map[i][j] === 7){
+                subArray.push(new Tile('assets/wall7.png', i, j, 16, 16, "wall"));
+            }
+            else if(map[i][j] === 8){
+                subArray.push(new Tile('assets/wall8.png', i, j, 16, 16, "wall"));
+            }
+            else if(map[i][j] === 9){
+                subArray.push(new Tile('assets/wall9.png', i, j, 16, 16, "wall"));
+            }
+        }
+        renderedMap.push(subArray)
+    }
+    return renderedMap;
+}
+
+
+
+// to-DO, 
+// forEvery: var coords = i, j 16x16 coords i, j- walkable, interactible, nonwalkable
+// if coords === player coords Move player 
+// forEvery tile != 0, make colRect
+
+
+// var domRect = pc.getBoundingClientRect()
+
+var pc = newPlayableCharacter(80, 160)
+var map = mapRender(demoMap)
+
+console.log(map[5][5])
