@@ -18,6 +18,7 @@ Stretch Goals:
 - Combat system with game state changes (Try not to use the nuke hand grenade except on the teleporter)
 - Two/More Player Mode
 - Randomized NPC and NPC interactions based on subfaction and traits
+- sprite animation via Flash/Actionscript
 
 Ideas
 XY coordinate "grid" of old school dungeon 30x30 rooms, consoles let you move around faster if it's big enough as a stretch goal. Doors at each exit are interactables that if passed set you to the correct next state. 
@@ -66,8 +67,14 @@ JS for user input to open menu/close menu/menu interactions
 Sprint Summary:
 
 build demo page (Working skeleton from browser game module)
+    code for background images
+    Code for movement
+    code for inventory
+    code for interactibles
+    Code for local storage/game menu
 
 expand demo page to Module 1 functionality
+    Node tree for story/gameplay 
 
 Finish styling/game functionality
 

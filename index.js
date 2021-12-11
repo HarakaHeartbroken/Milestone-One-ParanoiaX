@@ -3,6 +3,7 @@ const pc = newPlayableCharacter(100, 110)
 move(newImage('assets/floor.png')).to(100, 100)
 
 
+
 // create tile, newTile isn't defined for some reason?
 // move(newTile("assets/floor.png")).to(100,100)
 
