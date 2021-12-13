@@ -24,8 +24,18 @@
 //   }
 
 
-// function checkAABBCollision(A, B)
-// {
+
+// ForEvery map tile, check collision, if collision check type, if type Wall 
+// stop movement (in collision direction? Or check which boundaries are colliding and go there)
+// if type Item do X for pickup, if type hazard stop movement do damage, etc
+// the map is checked every player movement, too calc intensive but functional for now
+// to -do: figure out how to assign a coordinate variable to player coordinates, 
+// just need to tag those in the player element, so like var player.xcoord = this.x? then 
+// I can reference player.xcoord?
+
+
+
+// function checkCollision(A, B){
 //   var AisToTheRightOfB = A.getLeft() > B.getRight();
 //   var AisToTheLeftOfB = A.getRight() < B.getLeft();
 //   var AisAboveB = A.getBottom() < B.getTop();
@@ -36,12 +46,17 @@
 //     || AisBelowB);
 // }
 
+// to-do, make a class/constructor for the player tile with xy coords as properties?
+// rewrite the movement to be like:
+// x = x + "px"
+// xCoords = x
+// at the end
 
 var demoMap = [
     [4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5],
     [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-    [3,0,0,0,0,0,0,0,0,0,4,1,1,5,0,0,0,0,0,0,0,0,0,2],
+    [3,0,0,0,6,0,0,0,0,0,4,1,1,5,0,0,0,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
     [3,0,0,0,0,6,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,4,1,1,8,6,6,7,1,1,5,0,0,0,0,0,0,2],
@@ -71,7 +86,11 @@ class Tile {
 
 
 // Appends array of object properties to the ASCII map array passed to it
-
+//to-do: lessen redundant code by making the properties passable as an array, so:
+// [0, "assets/bgTile.png", 16, 16, "walkable"]
+// [1, "assets/wall1.png", 16, 16, "wall"]
+// etc. I could in theory make bigger images of specific tiles this way
+// use this to replace the multiple subArray.push... lines present. 
 function mapRender(map){
     const renderedMap = [];
     for(i = 0; i<map.length; i++){
@@ -115,13 +134,8 @@ function mapRender(map){
 
 
 
-// to-DO, 
-// forEvery: var coords = i, j 16x16 coords i, j- walkable, interactible, nonwalkable
-// if coords === player coords Move player 
-// forEvery tile != 0, make colRect
 
 
-// var domRect = pc.getBoundingClientRect()
 
 var pc = newPlayableCharacter(80, 160)
 var map = mapRender(demoMap)

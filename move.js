@@ -7,7 +7,8 @@
 
 
 
-
+// moves a given element, usually the player character, a given amount of pixels per input,
+// if held at a rate of 1 per second
 function move(element) {
     element.style.position = 'fixed'
 

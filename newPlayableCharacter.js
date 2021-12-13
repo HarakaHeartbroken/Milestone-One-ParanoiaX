@@ -1,8 +1,11 @@
+// creates new player image at a set of initial coordinates, and handles the callback for 
+// direction with the appropriate gif
+// To-do: replace with class/constructor model that includes xy coords?
 function newPlayableCharacter(x, y) {
     const element = newImage('assets/redStatic.png')
     element.style.zIndex = 1;
-    element.x = 16;
-    element.y = 16;
+    // element.xCoord = x? Or outside of the function after each loop?
+    // element.yCoord, same idea
 
     function handleDirectionChange(direction) {
         if (direction === null) {
