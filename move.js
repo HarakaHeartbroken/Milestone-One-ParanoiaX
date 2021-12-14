@@ -27,22 +27,23 @@ function move(element) {
         
         function moveCharacter(){ 
             if(direction === 'west'){
-                x-=0.5
+                x-=1
             }
             if(direction === 'north'){
-                y+=0.5
+                y+=1
             }
             if(direction === 'east'){
-                x+=0.5
+                x+=1
             }
             if(direction === 'south'){
-                y-=0.5
+                y-=1
             }
             element.style.left = x + 'px'
             element.style.bottom = y + 'px'
+            // console.log("PC x = " + element.x + " PC y = " + element.y)
         }
-        
-        setInterval(moveCharacter, 1)
+        // Xcoord = x Ycoord = Y, checkCollision
+        setInterval(moveCharacter, 10)
         
         document.addEventListener('keydown', function(e){
             if(e.repeat) return;
@@ -59,12 +60,12 @@ function move(element) {
             if(e.key === 'ArrowDown'){
                 direction = 'south'
             }
-            callback(direction)
+            callback(direction, element)
         })
         
         document.addEventListener('keyup', function(e){
             direction = null
-            callback(direction)
+            callback(direction, element)
         })
     }
 

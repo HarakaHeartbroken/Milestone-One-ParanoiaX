@@ -2,8 +2,8 @@
 // direction with the appropriate gif
 // To-do: replace with class/constructor model that includes xy coords?
 function newPlayableCharacter(x, y) {
-    const element = newImage('assets/redStatic.png')
-    element.style.zIndex = 1;
+    this.element = newImage('assets/redStatic.png')
+    this.element.style.zIndex = 1;
     // element.xCoord = x? Or outside of the function after each loop?
     // element.yCoord, same idea
 
