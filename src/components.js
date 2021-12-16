@@ -46,7 +46,7 @@ Crafty.c('Tree', {
 Crafty.c('PlayerCharacter', {
     init: function() {
       this.requires('Actor, Fourway, Color, Collision')
-        .fourway(50)
+        .fourway(100)
         .color('rgb(20, 75, 40)')
         .stopOnSolids();
     },
@@ -61,10 +61,17 @@ Crafty.c('PlayerCharacter', {
   
     // Stops the movement
     stopMovement: function() {
+    console.log("stopped")
       this._speed = 0;
-      if (this._movement) {
-        this.x -= this._movement.x;
+      console.log(this._speed);   
+      if (this._movement) { 
+        this.x -= this._movement.x; 
         this.y -= this._movement.y;
       }
+      else{
+          console.log("heres the issue")
+// stop code
+      }
+      
     }
   });

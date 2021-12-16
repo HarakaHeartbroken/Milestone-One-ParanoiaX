@@ -1,3 +1,17 @@
+"testbed" is current working prototype of the game itself, uses a array map to dynamically render a set of sprite tiles, 
+has a working movement handler for arrow input
+
+"game" is the lesson build from Intro to Crafty: http://buildnewgames.com/introduction-to-crafty/
+
+"newInventory", "newItem", etc, are legacy builds/methods of creating the various resources, haven't cleaned up yet
+
+
+
+
+
+
+
+
 # Milestone-One-ParanoiaX
 First milestone project
 paranoia roguelike game- start with the RPS game screen on like green/black LED computer, then pull out to top-down pixel art (hopefully from free file library).
