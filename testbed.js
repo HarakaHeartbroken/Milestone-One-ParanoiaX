@@ -1,3 +1,11 @@
+
+// I've been doing a lot of work, and I think I can just do it way easier with the library
+// API and colldetection from the JS class examples, AABB rectangles
+
+
+
+
+
 // draw: function(){
 //     var self = this;
 //     this.context.clearRect(0, 0, this.w, this.h);
@@ -39,7 +47,7 @@
 // }
 // pc.x + 1 map[i][j].x
 
-// let playerX = pc.x
+
 // function checkCollision(A, B){
 //   var AisToTheRightOfB = A.getLeft() > B.getRight();
 //   var AisToTheLeftOfB = A.getRight() < B.getLeft();
@@ -51,6 +59,27 @@
 //     || AisBelowB);
 // }
 
+// Theoretical use to check collision state, run after each movement and undo the movement?
+// EG on Keydown{
+    //  x++ 
+    //  if checkCol = false, false, false, false;
+    //  x--
+    //  repeated for all 4 directions
+// function checkAABBCollision(A, B)
+// {
+//   var pcRight = (pc.x + pc.width) > (map[pc.x][pc.y].x);
+//   var pcLeft = (pc.x + pc.width) < (map[pc.x][pc.y].x);
+//   var pcAbove = (pc.y + pc.width) < (map[pc.x][pc.y].y);
+//   var pcBelow = (pc.y + pc.width) < (map[pc.x][pc.y].y);
+//   return !(pcRight
+//     || pcLeft
+//     || pcAbove
+//     || pcBelow);
+// }
+
+
+
+// let playerX = pc.x
 // collCheck(){
 // pc.x++
 // if (map[pc.x][pc.y].type != "walkable"){
@@ -90,9 +119,9 @@ var demoMap = [
     [3,0,0,0,0,0,0,4,1,1,8,6,6,7,1,1,5,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,2,6,6,6,6,6,6,6,6,3,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,2,6,6,6,6,6,6,6,6,3,0,0,0,0,0,0,2],
-    [3,0,0,0,0,0,0,7,1,1,5,6,6,4,1,1,8,0,0,0,0,0,0,2],
-    [3,0,0,0,0,0,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
-    [3,0,0,0,0,0,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
+    [3,0,0,6,0,0,0,7,1,1,5,6,6,4,1,1,8,0,0,0,0,0,0,2],
+    [3,0,6,0,6,0,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
+    [3,0,0,6,0,0,0,0,0,0,2,6,6,3,0,0,0,0,0,0,0,0,0,2],
     [3,0,4,5,0,4,5,0,0,0,7,1,1,8,0,0,0,0,0,0,0,0,0,2],
     [3,0,7,1,1,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
     [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
@@ -102,7 +131,7 @@ var demoMap = [
 
 class Tile {
     constructor(url, x, y, height, width, type) {
-        this.x = 16*x;
+        this.x = (16*x) + 530;
         this.y = 16*y;
         this.height = height;
         this.width = width;
@@ -205,14 +234,14 @@ function mapRender(map){
 
 // Creates new controllable Player
 // var pc = newPlayableCharacter(80, 160)
-let pc = new Player(`assets/redStatic.png`, 48, 0, 16, 16, "player1");
+let pc = new Player(`assets/redStatic.png`, 48, 80, 16, 16, "player1");
 move(pc.element).withArrowKeys(pc.x, pc.y, pc.handleDirectionChange);
 console.log(pc)
 console.log("Initial PC x = " + pc.x)
 console.log("Initial PC y = " + pc.y)
 var map = mapRender(demoMap)
 const inventory = newInventory()
-move(inventory).to(250, 0)
+move(inventory).to(427, 0)
  console.log(map[4][4])
 //  getCoords(map[4][4])
 // console.log("Map 0-0 zIndex = " + map[0][0].zIndex)

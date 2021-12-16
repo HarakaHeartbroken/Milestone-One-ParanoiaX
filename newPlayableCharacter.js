@@ -1,6 +1,10 @@
 // creates new player image at a set of initial coordinates, and handles the callback for 
 // direction with the appropriate gif
 // To-do: replace with class/constructor model that includes xy coords?
+
+
+
+
 function newPlayableCharacter(x, y) {
     this.element = newImage('assets/redStatic.png')
     this.element.style.zIndex = 1;
@@ -9,7 +13,7 @@ function newPlayableCharacter(x, y) {
 
     function handleDirectionChange(direction) {
         if (direction === null) {
-            element.src = `assets/redStatic.png`
+            this.element.src = `assets/redStatic.png`
         }
         if (direction === 'west') {
             element.src = `assets/redLeft.gif`

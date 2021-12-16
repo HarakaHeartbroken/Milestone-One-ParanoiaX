@@ -42,3 +42,19 @@
 
 // any way, there's an interactible door at the far end of the map, leads to the win screen
 // in the demo, leads to another map/story/challenge in the full game
+
+
+
+
+// Big List of Interactibles Needed:
+dripping oil/puddle
+loose panel
+computer console
+red laser fence
+Bouncy Bubble Beverage Dispenser and BBB
+Alt Color Costume
+INFRARED NPC/ROBOT
+
+// Big List of functions needed
+// when hit hazard die, reduce Lives Remaining by 1, show respawn animation
+// when interact
