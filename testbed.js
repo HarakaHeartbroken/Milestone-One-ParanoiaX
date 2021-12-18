@@ -182,6 +182,51 @@ class Player {
 }
 
 
+// Attempting costume change function outside of direction handling, so that the direction 
+// handling is run in whatever folder determined by the costume change function
+// class Player {
+//     constructor(url, x, y, height, width, type) {
+//         this.x = x;
+//         this.y = y;
+//         this.height = height;
+//         this.width = width;
+//         this.type = type; 
+//         this.costume = 'red'; 
+//         // move(newImage(url)).to(this.x, this.y) 
+//         this.element = newImage(url);
+//         // this.style.top = y + 'px';
+//         // this.style.left = x + 'px';
+//         this.element.style.zIndex = 1;
+//     }
+//     colorChange(costume, handleDirectionChange){
+//         if (costume === 'red'){
+
+//         }
+//         if (costume === 'green'){
+//             handleDirectionChange(direction, element, costume)
+//         }
+//     }
+    
+//     handleDirectionChange(direction, element,) {
+
+//         if (direction === null) {
+//             element.src = `static.png`
+//         }
+//         if (direction === 'west') {
+//             element.src = `left.gif`
+//         }
+//         if (direction === 'north') {
+//             element.src = `up.gif`
+//         }
+//         if (direction === 'east') {
+//             element.src = `right.gif`
+//         }
+//         if (direction === 'south') {
+//             element.src = `down.gif`
+//         }
+//     }
+// }
+
 
 // Appends array of object properties to the ASCII map array passed to it
 //to-do: lessen redundant code by making the properties passable as an array, so:
