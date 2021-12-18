@@ -27,9 +27,29 @@ Game = {
     Crafty.init(Game.width(), Game.height());
     Crafty.background('rgb(249, 223, 125)');
 
- // Player character, placed at 5, 5 on our grid
+//  Player character, placed at 5, 5 on our grid
  Crafty.e('PlayerCharacter').at(10, 5);
 
+
+//  Crafty.e("2D, Fourway, Collision, player")
+//  .attr({x: 32, y: 32, w: 32, h: 32})
+//  .collision([0, 16, 16, 0, 32, 16, 16, 32])
+//  .fourway()
+//  .bind('Move', function(evt) { // after player moved
+//    var hitDatas, hitData;
+//    if ((hitDatas = this.hit('wall'))) { // check for collision with walls
+//      hitData = hitDatas[0]; // resolving collision for just one collider
+//      if (hitData.type === 'SAT') { // SAT, advanced collision resolution
+//        // move player back by amount of overlap
+//        this.x -= hitData.overlap * hitData.nx;
+//        this.y -= hitData.overlap * hitData.ny;
+//      } else { // MBR, simple collision resolution
+//        // move player to previous position
+//        this.x = evt._x;
+//        this.y = evt._y;
+//      }
+//    }
+//  });
 
     // Place a tree at every edge square on our grid of 16x16 tiles
     for (var x = 0; x < Game.map_grid.width; x++) {

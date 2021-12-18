@@ -1,6 +1,6 @@
 function newInventory(){
     let inventory = document.createElement('div')
-    inventory.style.width = '36%'
+    inventory.style.width = '380px'
     inventory.style.height = '100px'
     inventory.style.display = 'flex'
     inventory.style.flexDirection = 'row'

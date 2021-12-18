@@ -47,14 +47,19 @@
 
 
 // Big List of Interactibles Needed:
-dripping oil/puddle
-loose panel
-computer console
-red laser fence
-Bouncy Bubble Beverage Dispenser and BBB
-Alt Color Costume
-INFRARED NPC/ROBOT
+// dripping oil/puddle
+// loose panel
+// computer console
+// red laser fence
+// Bouncy Bubble Beverage Dispenser and BBB
+// Alt Color Costume
+// INFRARED NPC/ROBOT
 
-// Big List of functions needed
-// when hit hazard die, reduce Lives Remaining by 1, show respawn animation
-// when interact
+// Big List of Functions Needed:
+// on collision with hazard die, reduce Lives Remaining by 1, show respawn animation
+// when interacting with computer console, give options for dialogue tree
+// when interacting with interactibles, give options for use
+// on collision with item, add item to inventory
+// Oil USE option replaces red character gifs with black character gifs
+// BBB replaces red character gif with yellow character gif
+// 
