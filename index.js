@@ -21,10 +21,10 @@ rect2.bind("EnterFrame", function () {
             this.xx++;
         };
         if (rect1.y < rect2.y + rect2.h){
-            this.yy--;
+            this.y--;
         };
         if (rect1.h + rect1.y > rect2.y){
-            this.y++;
+            this.yy++;
         };
         
     } else {
