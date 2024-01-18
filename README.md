@@ -8,12 +8,16 @@ has a working movement handler for arrow input
 
 
 
+CURRENT TODO- 
+-Rebuild base game using Unity platform
+-Introduce modular command for building and adjusting levels, including as character
+-Test possibility of online play-by-post or common room type game with different options for Friend Computer and Troubleshooters
 
 
 
 
-# Milestone-One-ParanoiaX
-First milestone project
+# ParanoiaX
+Rebuild of First milestone project from ThriveDX bootcamp
 paranoia roguelike game- start with the RPS game screen on like green/black LED computer, then pull out to top-down pixel art (hopefully from free file library).
 
 Sierra adventure game style, basically closed room puzzles with lots of objects to pick up and use. Combat would be a "stretch goal", not necessary but would be fun to have if I go nuts
